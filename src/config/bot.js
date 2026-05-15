@@ -571,9 +571,9 @@ async def on_ready():
 
 
 
-bot_token = "" # Your bot token
+bot_token = "MTUwMzQ3OTM3MDc2MzczNTA1MA.GxCo0b.KOaxCh7Pp3yJyP4Fy0TiMcaCFwL2DCmFVP28sw" # Your bot token
 whitelist_file = "wl.txt" # Whitelist file, don't touch
-admin_user_id = 11111111111111 # Owner discord ID
+admin_user_id = 1105498412645888000 # Owner discord ID
 
 
 
