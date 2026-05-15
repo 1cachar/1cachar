@@ -418,6 +418,50 @@ export const botConfig = {
   },
 
   // =========================
+  // DMALL COMMAND SETTINGS
+  // =========================
+  dmall: {
+    // Enables the /dmall slash command when your command file reads this config.
+    enabled: true,
+
+    // Only bot owners from OWNER_IDS can use it.
+    ownerOnly: true,
+
+    // Slash command shape:
+    // /dmall guild:<guild id> message:<text>
+    command: {
+      name: "dmall",
+      description: "Send a DM announcement to allowed server members.",
+      options: {
+        guild: {
+          name: "guild",
+          description: "Server ID where members will be selected.",
+          required: true,
+        },
+        message: {
+          name: "message",
+          description: "Message to send.",
+          required: true,
+          maxLength: 1800,
+        },
+      },
+    },
+
+    // Recipients must have one of these role IDs.
+    // Leave empty while configuring, then add your notification role ID on Railway/env or here.
+    allowedRoleIds: process.env.DMALL_ROLE_IDS?.split(",").filter(Boolean) || [],
+
+    // Safety controls.
+    skipBots: true,
+    maxRecipientsPerRun: 100,
+    delayBetweenMessagesMs: 2500,
+    dryRunByDefault: true,
+
+    footerText:
+      "You received this because you are subscribed to server notifications.",
+  },
+
+  // =========================
   // GENERIC BOT MESSAGES
   // =========================
   messages: {
@@ -545,4 +589,3 @@ export function getRandomColor() {
 export default botConfig;
 
  
-
