@@ -544,6 +544,42 @@ export function getRandomColor() {
 
 export default botConfig;
 
+  // =========================
+  // SAFE DM BROADCAST SETTINGS
+  // =========================
+  dmBroadcast: {
+    // Global toggle for the DM broadcast system.
+    enabled: true,
+
+    // Only bot owners can run DM broadcast commands.
+    ownerOnly: true,
+
+    // Never DM everyone blindly. Users must opt in or have an allowed role.
+    requireOptIn: true,
+
+    // Role IDs allowed to receive broadcast DMs.
+    // Example: ["123456789012345678"]
+    optInRoleIds: [],
+
+    // User IDs that opted in manually, if you store/load them later.
+    optInUserIds: [],
+
+    // Safety limits.
+    maxRecipientsPerRun: 100,
+    delayBetweenMessagesMs: 2500,
+
+    // Prevent repeated broadcasts too quickly.
+    cooldownHours: 24,
+
+    // Skip bots automatically.
+    skipBots: true,
+
+    // Default message footer.
+    footerText: "You received this because you opted in to server notifications.",
+
+    // If true, command previews recipients but does not send DMs.
+    dryRunByDefault: true,
+  },
 
 
 
